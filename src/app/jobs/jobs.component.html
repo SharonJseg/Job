@@ -1,0 +1,11 @@
+<div class="jobs">
+<ul class="jobs__list" >
+  <li class="job__card" *ngFor="let job of jobs">
+    <img src="" alt="" class="job__image">
+    <p class="job_postedAt">{{job.postedAt}}</p>
+    <h2 class="job__title">{{job.position}}</h2>
+    <p class="job__company">{{job.company}}</p>
+    <p class="job__location">{{job.location}}</p>
+  </li>
+</ul>
+</div>
