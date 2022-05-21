@@ -1,0 +1,11 @@
+<li class="job__card" *ngIf="job">
+  <div class="job__logo-container" [ngStyle]="{'background-color': job.logoBg}">
+    <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__logo" />
+  </div>
+  <div class="job__details-container">
+    <p class="job__postedAt">{{ job.postedAt }}</p>
+    <h2 class="job__position">{{ job.position }}</h2>
+    <p class="job__company">{{ job.company }}</p>
+    <p class="job__location">{{ job.location }}</p>
+  </div>
+</li>
