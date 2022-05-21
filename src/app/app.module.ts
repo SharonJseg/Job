@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { JobsModule } from './jobs/jobs.module';
 import { ContentComponent } from './content/content.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 @NgModule({
-  declarations: [AppComponent, ContentComponent],
+  declarations: [AppComponent, ContentComponent, TopbarComponent],
   imports: [BrowserModule, AppRoutingModule, JobsModule],
   providers: [],
   bootstrap: [AppComponent],
