@@ -12,4 +12,8 @@ export class JobItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  openJobDetails(id: IJob) {
+    console.log(id);
+  }
 }
