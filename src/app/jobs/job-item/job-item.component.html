@@ -1,5 +1,5 @@
-<li class="job" *ngIf="job">
-  <div class="job__logo-container" [ngStyle]="{'background-color': job.logoBg}">
+<li class="job" *ngIf="job" [routerLink]="['job-details', job.id]">
+  <div class="job__logo-container" [ngStyle]="{'background-color': job.logoBg}" >
     <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__logo" />
   </div>
   <div class="job__details-container">

@@ -9,9 +9,10 @@ import { ContentComponent } from './content/content.component';
 import { TopbarComponent } from './topbar/topbar.component';
 
 @NgModule({
-  declarations: [AppComponent, ContentComponent, TopbarComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, JobsModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}
