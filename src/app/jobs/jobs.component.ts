@@ -9,7 +9,6 @@ import { JobService } from '../services/job.service';
 })
 export class JobsComponent implements OnInit {
 
-  public jobs = this.jobService?.jobs
   userName?: string = this.jobService?.userName;
 
   constructor(private jobService: JobService) {}

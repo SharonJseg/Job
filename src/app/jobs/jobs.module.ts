@@ -5,6 +5,8 @@ import { JobItemComponent } from './job-item/job-item.component';
 import { JobDetailsComponent } from './job-details/job-details.component';
 import { Routes, RouterModule } from '@angular/router';
 import { TopbarComponent } from '../topbar/topbar.component';
+import { JobListComponent } from './job-list/job-list.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,8 @@ const routes: Routes = [
     JobItemComponent,
     JobDetailsComponent,
     TopbarComponent,
+    JobListComponent,
+    LayoutComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [JobsComponent],

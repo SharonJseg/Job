@@ -4,5 +4,9 @@
 </div>
 <div class="container">
   <app-topbar></app-topbar>
-  <app-jobs></app-jobs>
+  <section class="jobs">
+    <h1 class="jobs__title">Hi {{userName}}, glad you're here 👏</h1>
+<!--  <app-job-list></app-job-list>-->
+    <ng-content></ng-content>
+  </section>
 </div>
