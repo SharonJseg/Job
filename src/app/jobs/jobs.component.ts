@@ -8,7 +8,8 @@ import { JobService } from '../services/job.service';
   styleUrls: ['./jobs.component.scss'],
 })
 export class JobsComponent implements OnInit {
-  public jobs = [...JOBS];
+
+  public jobs = this.jobService?.jobs
   userName?: string = this.jobService?.userName;
 
   constructor(private jobService: JobService) {}
