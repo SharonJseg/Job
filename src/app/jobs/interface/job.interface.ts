@@ -19,6 +19,6 @@ export interface IJob {
   website: string;
   apply: string;
   description: string;
-  requirements?: Requirements;
-  role?: Role;
+  requirements: Requirements;
+  role: Role;
 }

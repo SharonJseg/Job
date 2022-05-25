@@ -1,0 +1,45 @@
+.job {
+  color: #535353;
+  //max-width: 50vw;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__img-container {
+    height: 140px;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+  }
+
+  &__img {
+    max-width: 81px;
+    width: 100%;
+  }
+
+  &__website-button {
+    margin-left: auto;
+  }
+
+  &__company {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: "Montagu Slab", serif;
+  }
+
+  &__website {
+    font-size: 16px;
+    color: #9d9d9d;
+  }
+
+  &__position-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
