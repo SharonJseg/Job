@@ -14,8 +14,8 @@ export class JobItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openJobDetails(obj?: any) {
-    this.jobService.setJobDetails(obj);
-    console.log(obj);
-  }
+  // openJobDetails(obj?: any) {
+  //   this.jobService.setJobDetails(obj);
+  //   console.log(obj);
+  // }
 }
