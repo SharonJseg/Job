@@ -1,11 +1,25 @@
 .job {
   color: #535353;
   //max-width: 50vw;
+  line-height: 1.5;
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    border: none;
+    background: #e2e2e2;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #d2d2d2;
+    }
   }
 
   &__img-container {
@@ -41,5 +55,58 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 32px;
+  }
+
+  &__postedAt {
+    font-size: 14px;
+    font-weight: 100;
+    color: #9d9d9d;
+  }
+
+  &__position-title {
+    font-family: 'Montagu Slab', serif;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+    color: #000;
+    margin: 15px 0 10px;
+  }
+
+  &__location {
+    color: #e52c51;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__apply-button {
+    align-self: flex-start;
+  }
+
+  &-title {
+    padding: 20px 32px;
+    border-bottom: 1px solid #d2d2d2;
+    font-family: "Montagu Slab", serif;
+    font-size: 20px;
+  }
+
+  &-content {
+    padding: 32px 32px;
+  }
+
+  &__items {
+    list-style: inside;
+    margin-left: 20px;
+    margin-top: 25px;
   }
 }
+.container {
+  margin-top: 20px;
+  //padding:  32px;
+  background: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 4px;
+ }
+
+

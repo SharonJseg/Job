@@ -1,51 +1,55 @@
 <app-layout>
-  <section class="job">
-    <header class="job__header">
-      <div class="job__img-container" [ngStyle]="{ 'background-color': job.logoBg }">
-        <img
-          src="{{ job.logo }}"
-          alt="{{ job.company }}"
-          class="job__img"
-        />
+  <ng-container *ngIf="job$ | async as job">
+<button (click)="next()">next</button>
+    <section class="job">
+      <header class="job__header">
+        <div class="job__img-container" [ngStyle]="{ 'background-color': job.logoBg }">
+          <img
+            src="{{ job.logo }}"
+            alt="{{ job.company }}"
+            class="job__img"
+          />
+        </div>
+        <div class="job__company-container">
+          <h2 class="job__company">{{ job.company }}</h2>
+          <p class="job__website">{{ job.company }}.com</p>
+        </div>
+        <button class="job__button job__website-button">Company Site</button>
+      </header>
+
+      <div class="job__position-container container">
+        <div class="job__position">
+          <p class="job__postedAt">{{ job.postedAt }}</p>
+          <h2 class="job__position-title">{{ job.position }}</h2>
+          <p class="job__location">{{ job.location }}</p>
+          <p class="job__text">{{ job.description }}</p>
+        </div>
+        <button class="job__button job__apply-button">Apply</button>
       </div>
-      <div class="job__company-container">
-        <h2 class="job__company">{{ job.company }}</h2>
-        <p class="job__website">{{ job.company }}.com</p>
+
+      <div class="job-container container">
+        <h2 class="job-title">Requirements</h2>
+        <div class="job-content">
+          <p class="job__text">{{ job.requirements.content }}</p>
+          <ul class="job__items">
+            <li *ngFor="let item of job.requirements.items" class="job__item">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <button class="job__button job__website-button">Company Site</button>
-    </header>
 
-    <div class="job__position-container">
-      <div class="job__position">
-        <p class="job__postedAt">{{ job.postedAt }}</p>
-        <h2 class="job__position-title">{{ job.position }}</h2>
-        <p class="job__location">{{ job.location }}</p>
+      <div class="job-container container">
+        <h2 class="job-title">Role</h2>
+        <div class="job-content">
+          <p class="job__text">{{ job.role.content }}</p>
+          <ul class="job__items">
+            <li *ngFor="let item of job.role.items" class="job__item">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <button class="job__button job__apply-button">Apply</button>
-    </div>
-
-    <div class="job-container">
-      <p class="job__text">{{ job.description }}</p>
-    </div>
-
-    <div class="job-container">
-      <h2 class="job-title">Requirements</h2>
-      <p class="job__text">{{ job.requirements.content }}</p>
-      <ul class="job__items">
-        <li *ngFor="let item of job.requirements.items" class="job__item">
-          {{ item }}
-        </li>
-      </ul>
-    </div>
-
-    <div class="job-container">
-      <h2 class="job-title">Role</h2>
-      <p class="job__text">{{ job.role.content }}</p>
-      <ul class="job__items">
-        <li *ngFor="let item of job.role.items" class="job__item">
-          {{ item }}
-        </li>
-      </ul>
-    </div>
-  </section>
+    </section>
+  </ng-container>
 </app-layout>
