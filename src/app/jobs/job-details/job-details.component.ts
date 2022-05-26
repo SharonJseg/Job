@@ -12,24 +12,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class JobDetailsComponent implements OnInit {
   private _currentId?: number;
   public job$: Observable<IJob | undefined> = this.getJob();
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private jobService: JobService,
-
+    private jobService: JobService
   ) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   private getJob(): Observable<IJob | undefined> {
-    // use activated route snapshot
-    return this.activatedRoute.queryParams.pipe(
+    return this.activatedRoute.params.pipe(
       map((param) => {
-        // console.log();
-        this._currentId = param['get']('id');
-        console.log(this._currentId);
+        this._currentId = +param['id'];
         return this.jobService.jobs.find((j) => j.id === this._currentId);
       })
     );
@@ -37,7 +32,7 @@ export class JobDetailsComponent implements OnInit {
 
   next() {
     return this.router.navigate([
-      '/job-details/' + ((this._currentId as number) + 1),
+      '/jobs/job-details/' + ((this._currentId as number) + 1),
     ]);
   }
 }
