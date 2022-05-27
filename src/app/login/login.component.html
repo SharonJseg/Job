@@ -1,13 +1,31 @@
 <ng-container>
-<img src="./assets/images/home.jpg" alt="bg" class="background-image">
-<div class="form-container">
-  <img src="./assets/images/job-logo-black-md.svg" alt="logo_black" class="logo">
-  <h1 class="form__title">Login</h1>
-  <form action="" class="form">
-    <input type="text" class="form__input" placeholder="Enter your Email">
-    <input type="text" class="form__input" placeholder="Enter password">
-    <button class="form__button" [routerLink]="'/jobs'">LOGIN</button>
-  </form>
-</div>
-</ng-container>
+  <img src="./assets/images/home.jpg" alt="bg" class="background-image" />
+  <div class="form-container">
+    <img
+      src="./assets/images/job-logo-black-md.svg"
+      alt="logo_black"
+      class="logo"
+    />
+    <h1 class="form__title">Login</h1>
+    <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <job-input
+        [type]="'text'"
+        [placeholder]="'Enter your Username'"
+        [inputName]="'Username'"
+        [formControlName]="'username'"
+        [validators]="usernameValidators"
+      ></job-input>
+      <job-input
+        [type]="'password'"
+        [placeholder]="'Enter your Password'"
+        [inputName]="'Password'"
+        [formControlName]="'password'"
+        [validators]="passwordValidators"
+      ></job-input>
 
+      <button class="form__button" [disabled]="formGroup.invalid"
+        [ngClass]="formGroup.invalid ? 'form__button-disabled' : ''"
+      >LOGIN</button>
+    </form>
+  </div>
+</ng-container>

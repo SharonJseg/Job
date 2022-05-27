@@ -1,0 +1,35 @@
+<ng-container>
+  <input
+    class="job__input"
+    [type]="type"
+    [formControl]="formControl"
+    [placeholder]="placeholder"
+  />
+  <span
+    *ngIf="formControl.hasError('email') && !formControl.hasError('required')"
+  >
+    {{ error.email }}
+  </span>
+  <span
+    class="job__input-error"
+    *ngIf="formControl.hasError('required')"
+    [ngClass]="
+      formControl.touched && formControl.invalid
+        ? 'job__input-error-show'
+        : ''
+    "
+  >
+    {{ inputName }} is <strong>required</strong>
+  </span>
+  <span
+    class="job__input-error"
+    *ngIf="formControl.hasError('minLength')"
+    [ngClass]="
+      formControl.touched && formControl.invalid
+         ? 'job__input-error-show'
+        : ''
+    "
+  >
+    {{ error.minLength }}
+  </span>
+</ng-container>
