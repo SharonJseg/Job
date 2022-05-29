@@ -8,3 +8,7 @@
 
 export * from './lib/input/input.component';
 export * from './lib/input/input.module';
+
+
+export * from './lib/loader/loader.component'
+export * from './lib/loader/loader.module'

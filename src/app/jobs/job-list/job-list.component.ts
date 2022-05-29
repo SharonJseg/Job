@@ -9,7 +9,17 @@ import { JobService } from 'src/app/services/job.service';
 export class JobListComponent implements OnInit {
   public jobs = this.jobService?.jobs;
 
+  showLoader: boolean = true;
+
   constructor(private jobService: JobService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.simulateLoader()
+  }
+
+  simulateLoader() {
+    setTimeout(() => {
+      this.showLoader = false;
+    },3500)
+  }
 }

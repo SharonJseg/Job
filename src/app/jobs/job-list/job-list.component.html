@@ -1,3 +1,5 @@
-<ul class="jobs__list" >
+<job-loader src="
+./assets/images/job_logo_loader_transparent.gif" *ngIf="showLoader"></job-loader>
+<ul class="jobs__list"  *ngIf="!showLoader">
   <app-job-item [job]="job" *ngFor="let job of jobs"></app-job-item>
 </ul>
