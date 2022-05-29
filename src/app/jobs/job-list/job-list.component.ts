@@ -15,18 +15,17 @@ export class JobListComponent implements OnInit {
   //   console.log(job);
   // })
 
-  list$ = this.jobService.getJobs()
+  list$ = this.jobService.getJobs();
 
   constructor(private jobService: JobService) {}
 
   ngOnInit(): void {
-    this.simulateLoader()
-
+    this.simulateLoader();
   }
 
   simulateLoader() {
     setTimeout(() => {
       this.showLoader = false;
-    },3500)
+    }, 2000);
   }
 }

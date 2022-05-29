@@ -4,15 +4,13 @@ import { JobService } from 'src/app/services/job.service';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
+  // userName: string | null = localStorage.getItem('username');
+  userName: string | null = localStorage.getItem('username');
 
-  userName?: string = this.jobService?.userName;
+  constructor(private jobService: JobService) {}
 
-  constructor(private jobService: JobService) { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

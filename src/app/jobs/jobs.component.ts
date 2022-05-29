@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JOBS } from './interface/job.mock';
-import { JobService } from '../services/job.service';
 
 @Component({
   selector: 'app-jobs',
@@ -8,10 +6,7 @@ import { JobService } from '../services/job.service';
   styleUrls: ['./jobs.component.scss'],
 })
 export class JobsComponent implements OnInit {
-
-  userName?: string = this.jobService?.userName;
-
-  constructor(private jobService: JobService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

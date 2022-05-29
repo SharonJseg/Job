@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
 import { IJob } from '../interface/job.interface';
-import { Observable, switchMap } from "rxjs";
+import { Observable, switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -11,10 +11,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class JobDetailsComponent implements OnInit {
   public job$: Observable<IJob | undefined> = this.activatedRoute.params.pipe(
-    switchMap((params)=>{
-      return this.jobService.getJobsById(params['id'])
+    switchMap((params) => {
+      return this.jobService.getJobsById(params['id']);
     })
-  )
+  );
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,8 +25,10 @@ export class JobDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   next(id: number) {
-    return this.router.navigate([
-      '/jobs/job-details/' + (id + 1),
-    ]);
+    if (id >= this.jobService.jobs) {
+      return this.router.navigate(['/jobs/job-details/1']);
+    } else {
+      return this.router.navigate(['/jobs/job-details/' + (id + 1)]);
+    }
   }
 }

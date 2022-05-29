@@ -1,4 +1,7 @@
 <div class="actions">
-<p class="username">{{userName}}</p>
-  <button type="button" class="logout" [routerLink]="'/login'">logout</button>
+  <a [routerLink]="'/jobs'" *ngIf="router.url !== '/jobs'" class="back"
+    >< back to all jobs</a
+  >
+  <p class="username">{{ userName }}</p>
+  <button type="button" class="logout" (click)="onLogout()">logout</button>
 </div>
