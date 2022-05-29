@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
     private jobService: JobService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.jobService.getJobs()
+  }
 
   onSubmit() {
     console.log(this.formGroup.value);

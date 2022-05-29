@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 import { JobService } from 'src/app/services/job.service';
 import { IJob } from '../interface/job.interface';
 
@@ -12,10 +12,7 @@ export class JobItemComponent implements OnInit {
 
   constructor(private jobService: JobService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
-  // openJobDetails(obj?: any) {
-  //   this.jobService.setJobDetails(obj);
-  //   console.log(obj);
-  // }
 }
