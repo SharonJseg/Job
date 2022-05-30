@@ -1,4 +1,14 @@
 {
+  "users": [
+    {
+      "username": "sharon",
+      "password": "111"
+    },
+    {
+      "username": "assaf",
+      "password": "111"
+    }
+  ],
   "jobs": [
     {
       "id": 1,
@@ -481,5 +491,4 @@
       }
     }
   ]
-
 }

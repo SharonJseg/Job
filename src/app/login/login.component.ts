@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JobService } from '../services/job.service';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private jobService: JobService
+    private jobService: JobService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {}
@@ -31,9 +33,11 @@ export class LoginComponent implements OnInit {
     // console.log(this.formGroup.value);
     // console.log('valid', this.formGroup.valid);
     if (this.formGroup.valid) {
-      // this.jobService.setUsername(this.formGroup.value.username);
       localStorage.setItem('username', this.formGroup.value.username);
-      // this.jobService.getJobs();
+      this.authService.setUser(
+        this.formGroup.value.username,
+        this.formGroup.value.password
+      );
       this.router.navigate(['/jobs']);
     }
   }
