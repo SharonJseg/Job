@@ -82,6 +82,11 @@
 
   &__apply-button {
     align-self: flex-start;
+    background-color: #ff962b;
+    color: #fff;
+     &:hover {
+       background-color: #fea54a;
+     }
   }
 
   &-title {

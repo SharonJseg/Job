@@ -23,25 +23,49 @@
         [validators]="passwordValidators"
       ></job-input>
 
-      <button class="form__button" [disabled]="formGroup.invalid"
+      <button
+        class="form__button"
+        [disabled]="formGroup.invalid"
         [ngClass]="formGroup.invalid ? 'form__button-disabled' : ''"
-      >LOGIN</button>
+      >
+        LOGIN
+      </button>
       <div class="divider">or use</div>
     </form>
     <div class="store__container">
-      <img src="./assets/images/google-logo.svg" alt="google logo" class="store store__google">
-      <img src="./assets/images/Microsoft_logo.svg" alt="microsoft logo" class="store store__micro">
+      <a href="#">
+        <img
+          src="./assets/images/google-logo.svg"
+          alt="google logo"
+          class="store store__google"
+        />
+      </a>
+      <a href="#">
+        <img
+          src="./assets/images/Microsoft_logo.svg"
+          alt="microsoft logo"
+          class="store store__micro"
+        />
+      </a>
     </div>
     <a href="#">Forgot your password?</a>
-    <p class="no-account">Don't have an account? <a href="#">Request a demo</a> </p>
+    <p class="no-account">
+      Don't have an account? <a href="#">Request a demo</a>
+    </p>
 
-    <p class="terms">By logging in, you agree to <a href=""> HiBob's Privacy Policy</a> and <a href="#"> End-Users Terms of Use</a>
+    <p class="terms">
+      By logging in, you agree to <a href="#"> HiBob's Privacy Policy</a> and
+      <a href="#"> End-Users Terms of Use</a>
     </p>
     <div class="get-bob__container">
       <p>USE BOB ON THE GO</p>
       <div class="online-container">
-        <img src="./assets/images/AppStoreLogo.svg" alt="appstore">
-        <img src="./assets/images/GooglePlayLogo.svg" alt="googleplay">
+        <a href="#">
+          <img src="./assets/images/AppStoreLogo.svg" alt="appstore" />
+        </a>
+        <a href="#">
+          <img src="./assets/images/GooglePlayLogo.svg" alt="google play" />
+        </a>
       </div>
     </div>
   </div>
