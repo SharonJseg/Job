@@ -1,0 +1,11 @@
+<div class="job-container container">
+  <h2 class="job-title">{{ title }}</h2>
+  <div class="job-content">
+    <p class="job__text">{{ content }}</p>
+    <ul class="job__items">
+      <li *ngFor="let item of items" class="job__item">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+</div>

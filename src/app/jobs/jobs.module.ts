@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TopbarComponent } from '../topbar/topbar.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { LayoutComponent } from './layout/layout.component';
-import { LoaderModule } from "@job-common";
+import { DetailsBoxModule, LoaderModule } from '@job-common';
 
 const routes: Routes = [
   {
@@ -29,7 +29,12 @@ const routes: Routes = [
     JobListComponent,
     LayoutComponent,
   ],
-  imports: [CommonModule, LoaderModule ,RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    LoaderModule,
+    DetailsBoxModule,
+    RouterModule.forChild(routes),
+  ],
   exports: [JobsComponent],
 })
 export class JobsModule {}

@@ -31,29 +31,18 @@
         <button class="job__button job__apply-button">Apply</button>
       </div>
 
-      <div class="job-container container">
-        <h2 class="job-title">Requirements</h2>
-        <div class="job-content">
-          <p class="job__text">{{ job.requirements.content }}</p>
-          <ul class="job__items">
-            <li *ngFor="let item of job.requirements.items" class="job__item">
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
+       <job-details-box
+      [title]="'Requirements'"
+      [content]="job.requirements.content"
+      [items]="job.requirements.items"
+      ></job-details-box>
 
-      <div class="job-container container">
-        <h2 class="job-title">Role</h2>
-        <div class="job-content">
-          <p class="job__text">{{ job.role.content }}</p>
-          <ul class="job__items">
-            <li *ngFor="let item of job.role.items" class="job__item">
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
+      <job-details-box
+      [title]="'Role'"
+      [content]="job.role.content"
+      [items]="job.role.items"
+      ></job-details-box>
+
     </section>
   </ng-container>
 </app-layout>
