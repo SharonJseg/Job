@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {
-  ActivatedRoute,
   ActivatedRouteSnapshot,
   CanActivate,
   Router,
@@ -17,17 +16,19 @@ export class AuthGuard implements CanActivate {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private activeRoute: ActivatedRoute
   ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> {
+
     return this.authService.getUser().pipe(
       map((user) => {
+        // debugger;
         if (user) return true;
-        else return this.router.createUrlTree(['/']);
+        else { return this.router.createUrlTree(['']);
+      }
       })
     );
   }

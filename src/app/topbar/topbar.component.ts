@@ -18,23 +18,15 @@ export class TopbarComponent implements OnInit {
   user$: ReplaySubject<User | null> = new ReplaySubject<User | null>();
 
   constructor(
-    private jobService: JobService,
     public router: Router,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    // this.authService
-    //   .getUser()
-    //   .pipe(tap((user) => this.user$.next(user)))
-    //   .subscribe();
   }
 
   onLogout() {
-    // this.authService
-    //   .getUser()
-    //   .pipe(tap((user) => this.user$.next(null)))
-    //   .subscribe((user) => console.log(user));
+    this.authService.logOut()
     this.router.navigate(['/login']).then((res) => {
       localStorage.clear();
     });

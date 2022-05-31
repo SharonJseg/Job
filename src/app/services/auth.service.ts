@@ -9,9 +9,10 @@ const BASE_URL = `http://localhost:3000/`;
   providedIn: 'root',
 })
 export class AuthService {
-  private user$: ReplaySubject<User> = new ReplaySubject<User>(1);
+  private user$: ReplaySubject<User | null> = new ReplaySubject<User | null>(1);
 
   constructor(private httpClient: HttpClient) {}
+
 
   lookupUser(
     currentUsername: string,
@@ -35,4 +36,9 @@ export class AuthService {
   getUser() {
     return this.user$.asObservable();
   }
+
+  logOut() {
+    return this.user$.next(null)
+  }
+
 }

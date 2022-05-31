@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
     private authService: AuthService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.logOut()
+  }
 
   onSubmit() {
     // console.log(this.formGroup.value);

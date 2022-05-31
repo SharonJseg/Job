@@ -1,20 +1,22 @@
 <app-layout>
-  <ng-container *ngIf="job$ | async as job ">
-<button (click)="next(job.id)">next</button>
+  <ng-container *ngIf="job$ | async as job">
     <section class="job">
       <header class="job__header">
-        <div class="job__img-container" [ngStyle]="{ 'background-color': job.logoBackground }">
-          <img
-            src="{{ job.logo }}"
-            alt="{{ job.company }}"
-            class="job__img"
-          />
+        <div
+          class="job__img-container"
+          [ngStyle]="{ 'background-color': job.logoBackground }"
+        >
+          <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__img" />
         </div>
         <div class="job__company-container">
           <h2 class="job__company">{{ job.company }}</h2>
-          <a href="{{ job.website}}" target="_blank" class="job__website">{{ job.company }}.com</a>
+          <a href="{{ job.website }}" target="_blank" class="job__website"
+            >{{ job.company }}.com</a
+          >
         </div>
-        <button class="job__button job__website-button">Company Site</button>
+        <!--        <button class="job__button job__website-button">Company Site</button>-->
+
+        <button (click)="next(job.id)" class="next__button"></button>
       </header>
 
       <div class="job__position-container container">

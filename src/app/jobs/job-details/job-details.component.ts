@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./job-details.component.scss'],
 })
 export class JobDetailsComponent implements OnInit {
+
   public job$: Observable<IJob | undefined> = this.activatedRoute.params.pipe(
     switchMap((params) => {
       return this.jobService.getJobsById(params['id']);
@@ -31,4 +32,5 @@ export class JobDetailsComponent implements OnInit {
       return this.router.navigate(['/jobs/job-details/' + (id + 1)]);
     }
   }
+
 }
