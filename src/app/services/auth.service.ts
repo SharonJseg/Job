@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, ReplaySubject, tap } from 'rxjs';
 import { User } from '../jobs/interface/user.inteface';
 
-const BASE_URL = `http://localhost:3000/`;
+const BASE_URL = `http://localhost:3001`;
 
 @Injectable({
   providedIn: 'root',
@@ -13,13 +13,12 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) {}
 
-
   lookupUser(
     currentUsername: string,
     currentPassword: string
   ): Observable<User[]> {
     return this.httpClient.get<User[]>(
-      `${BASE_URL}users?email=${currentUsername}&&password=${currentPassword}`
+      `${BASE_URL}/users?email=${currentUsername}&&password=${currentPassword}`
     );
   }
 
@@ -38,7 +37,6 @@ export class AuthService {
   }
 
   logOut() {
-    return this.user$.next(null)
+    return this.user$.next(null);
   }
-
 }

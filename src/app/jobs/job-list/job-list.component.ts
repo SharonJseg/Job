@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
-import { JobService } from "src/app/services/job.service";
+import { Component, OnInit } from '@angular/core';
+import { JobService } from 'src/app/services/job.service';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-job-list',
@@ -7,7 +8,6 @@ import { JobService } from "src/app/services/job.service";
   styleUrls: ['./job-list.component.scss'],
 })
 export class JobListComponent implements OnInit {
-
   showLoader: boolean = true;
 
   list$ = this.jobService.getJobs();
@@ -21,6 +21,6 @@ export class JobListComponent implements OnInit {
   simulateLoader() {
     setTimeout(() => {
       this.showLoader = false;
-    }, 2000);
+    }, 1000);
   }
 }

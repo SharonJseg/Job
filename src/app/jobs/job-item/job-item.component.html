@@ -1,4 +1,3 @@
-<!--<li class="job" *ngIf="job" [routerLink]="['job-details', job.id]" (click)="openJobDetails(job)">-->
 <li class="job" *ngIf="job" [routerLink]="['job-details', job.id]" >
   <div class="job__logo-container" [ngStyle]="{'background-color': job.logoBackground}" >
     <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__logo" />
