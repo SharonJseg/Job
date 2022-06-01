@@ -1,0 +1,56 @@
+<app-layout>
+  <section class="form__container">
+    <h2 class="form__title">Please fill out the form</h2>
+    <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <job-input
+        [type]="'text'"
+        [placeholder]="'Enter Company Name'"
+        [inputName]="'company'"
+        [formControlName]="'company'"
+        [validators]="inputValidators"
+      ></job-input>
+      <job-input
+        [type]="'text'"
+        [placeholder]="'Enter Position Name'"
+        [inputName]="'position'"
+        [formControlName]="'position'"
+        [validators]="inputValidators"
+      ></job-input
+      ><job-input
+        [type]="'text'"
+        [placeholder]="'Enter Company Web Address'"
+        [inputName]="'website'"
+        [formControlName]="'website'"
+        [validators]="inputValidators"
+      ></job-input
+      ><job-input
+        [type]="'textarea'"
+        [placeholder]="'Enter Position Name'"
+        [inputName]="'position'"
+        [formControlName]="'position'"
+        [validators]="inputValidators"
+      ></job-input
+      ><job-input
+        [type]="'text'"
+        [placeholder]="'Enter Position Name'"
+        [inputName]="'position'"
+        [formControlName]="'position'"
+        [validators]="inputValidators"
+      ></job-input
+      ><job-input
+        [type]="'text'"
+        [placeholder]="'Enter Position Name'"
+        [inputName]="'position'"
+        [formControlName]="'position'"
+        [validators]="inputValidators"
+      ></job-input>
+      <button
+        class="form__button"
+        [disabled]="formGroup.invalid"
+        [ngClass]="formGroup.invalid ? 'form__button-disabled' : ''"
+      >
+        LOGIN
+      </button>
+    </form>
+  </section>
+</app-layout>

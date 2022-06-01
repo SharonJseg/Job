@@ -88,23 +88,6 @@
       background-color: #fea54a;
     }
   }
-  //
-  //&-title {
-  //  padding: 20px 32px;
-  //  border-bottom: 1px solid #d2d2d2;
-  //  font-family: "Montagu Slab", serif;
-  //  font-size: 20px;
-  //}
-
-  //&-content {
-  //  padding: 32px 32px;
-  //}
-
-  //&__items {
-  //  list-style: inside;
-  //  margin-left: 20px;
-  //  margin-top: 25px;
-  //}
 }
 .container {
   margin-top: 20px;
@@ -120,9 +103,10 @@
 }
 
 .round-button {
-  background-color: #e2e2e2;
+  background-color: #fff;
   border-radius: 100%;
-  border: none;
+  border: 1px solid #d2d2d2;
+
   width: 40px;
   height: 40px;
   display: flex;

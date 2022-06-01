@@ -7,12 +7,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { TopbarComponent } from '../topbar/topbar.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { LayoutComponent } from './layout/layout.component';
-import { DetailsBoxModule, LoaderModule } from '@job-common';
+import { DetailsBoxModule, InputModule, LoaderModule } from "@job-common";
+import { JobCreateComponent } from './job-create/job-create.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 const routes: Routes = [
   {
     path: '',
     component: JobsComponent,
+  },
+  {
+    path: 'create',
+    component: JobCreateComponent
   },
   {
     path: 'job-details/:id',
@@ -28,11 +34,14 @@ const routes: Routes = [
     TopbarComponent,
     JobListComponent,
     LayoutComponent,
+    JobCreateComponent,
   ],
   imports: [
     CommonModule,
     LoaderModule,
     DetailsBoxModule,
+    InputModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ],
   exports: [JobsComponent],
