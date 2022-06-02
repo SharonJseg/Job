@@ -26,13 +26,20 @@ export class JobService {
     );
   }
 
-  addJob(formData: {}, requirements: string, role: string): Observable<IJob[]> {
+  generateHSLColor() {
+    const hue = Math.floor((Math.random() * 24) * 15)
+    const sat = Math.floor(Math.random() * 101)
+    const lig = Math.floor(Math.random() * 101)
 
+    return `hsl(${hue}, ${sat}%, ${lig}%)`
+  }
+
+  addJob(formData: {}, requirements: string, role: string): Observable<IJob[]> {
     console.log(formData);
     const updatedFormData = {
       ...formData,
       logo: './assets/images/logos/blogr.svg',
-      logoBackground: 'hsl(12, 79%, 52%)',
+      logoBackground: this.generateHSLColor(),
       postedAt: '1sec ago',
       requirements: {
         title: 'Requirements',
@@ -44,9 +51,8 @@ export class JobService {
       },
     };
     console.log('updated', updatedFormData);
-    return this.httpClient
-      .post<IJob[]>(`${BASE_URL}/jobs`, updatedFormData)
-      // .pipe(tap((res) => console.log(res)));
+    return this.httpClient.post<IJob[]>(`${BASE_URL}/jobs`, updatedFormData);
+    // .pipe(tap((res) => console.log(res)));
   }
 
   getJobsById(id: number): Observable<IJob> {

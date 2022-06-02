@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
-import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-job-list',
