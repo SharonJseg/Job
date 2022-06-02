@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JobService } from '../../services/job.service';
-import { tap } from 'rxjs';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-job-create',
@@ -23,15 +23,20 @@ export class JobCreateComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private jobService: JobService
+    private jobService: JobService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-    // console.log(this.formGroup.value);
-    this.jobService
-      .addJob(this.formGroup.value)
-      .subscribe((val) => console.log(val));
+    this.jobService.addJob(
+      this.formGroup.value,
+      this.formGroup.value.requirements,
+      this.formGroup.value.role
+    )
+    .subscribe();
+    this.router.navigate(['/jobs'])
+
   }
 }

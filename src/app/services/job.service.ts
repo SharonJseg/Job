@@ -26,10 +26,27 @@ export class JobService {
     );
   }
 
-  addJob(formData: {}): Observable<IJob[]> {
-    return this.httpClient.post<IJob[]>(`${BASE_URL}/jobs`, formData).pipe(
-      tap(res => console.log(res))
-    )
+  addJob(formData: {}, requirements: string, role: string): Observable<IJob[]> {
+
+    console.log(formData);
+    const updatedFormData = {
+      ...formData,
+      logo: './assets/images/logos/blogr.svg',
+      logoBackground: 'hsl(12, 79%, 52%)',
+      postedAt: '1sec ago',
+      requirements: {
+        title: 'Requirements',
+        content: requirements,
+      },
+      role: {
+        title: 'Requirements',
+        content: role,
+      },
+    };
+    console.log('updated', updatedFormData);
+    return this.httpClient
+      .post<IJob[]>(`${BASE_URL}/jobs`, updatedFormData)
+      // .pipe(tap((res) => console.log(res)));
   }
 
   getJobsById(id: number): Observable<IJob> {
