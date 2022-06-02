@@ -1,0 +1,27 @@
+.sidebutton {
+  position: fixed;
+  z-index: 10;
+  width: 54px;
+  height: 54px;
+  right: 24px;
+  bottom: 48px;
+  background-color: #e52c51;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s background-color ease;
+
+  &__plus {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: #e95270;
+  }
+}

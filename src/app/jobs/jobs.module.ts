@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TopbarComponent } from '../topbar/topbar.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { LayoutComponent } from './layout/layout.component';
-import { DetailsBoxModule, InputModule, LoaderModule } from "@job-common";
+import { DetailsBoxModule, InputModule, LoaderModule, SideButtonModule } from "@job-common";
 import { JobCreateComponent } from './job-create/job-create.component';
 import { ReactiveFormsModule } from "@angular/forms";
 
@@ -42,6 +42,7 @@ const routes: Routes = [
     DetailsBoxModule,
     InputModule,
     ReactiveFormsModule,
+    SideButtonModule,
     RouterModule.forChild(routes),
   ],
   exports: [JobsComponent],
