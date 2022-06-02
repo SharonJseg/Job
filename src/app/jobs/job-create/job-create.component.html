@@ -24,26 +24,26 @@
         [validators]="inputValidators"
       ></job-input
       ><job-input
-        [type]="'textarea'"
-        [placeholder]="'Enter Position Name'"
-        [inputName]="'position'"
-        [formControlName]="'position'"
+        [type]="'text'"
+        [placeholder]="'Enter location'"
+        [inputName]="'location'"
+        [formControlName]="'location'"
         [validators]="inputValidators"
       ></job-input
       ><job-input
         [type]="'text'"
-        [placeholder]="'Enter Position Name'"
-        [inputName]="'position'"
-        [formControlName]="'position'"
+        [placeholder]="'Enter website'"
+        [inputName]="'website'"
+        [formControlName]="'website'"
         [validators]="inputValidators"
       ></job-input
-      ><job-input
-        [type]="'text'"
-        [placeholder]="'Enter Position Name'"
-        [inputName]="'position'"
-        [formControlName]="'position'"
-        [validators]="inputValidators"
-      ></job-input>
+      >
+      <textarea placeholder="Description" [formControlName]="'description'"
+      ></textarea>
+      <textarea placeholder="Requirements" [formControlName]="'requirements'"
+      ></textarea>
+      <textarea placeholder="Role" [formControlName]="'role'"
+      ></textarea>
       <button
         class="form__button"
         [disabled]="formGroup.invalid"

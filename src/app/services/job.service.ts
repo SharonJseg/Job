@@ -26,6 +26,12 @@ export class JobService {
     );
   }
 
+  addJob(formData: {}): Observable<IJob[]> {
+    return this.httpClient.post<IJob[]>(`${BASE_URL}/jobs`, formData).pipe(
+      tap(res => console.log(res))
+    )
+  }
+
   getJobsById(id: number): Observable<IJob> {
     return this.httpClient.get<IJob>(`${BASE_URL}/jobs/${id}`).pipe(
       tap((job) => {
