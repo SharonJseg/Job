@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
 import { IJob } from '../interface/job.interface';
-import { map, Observable, switchMap, tap } from "rxjs";
+import { map, Observable, switchMap, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -11,13 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class JobDetailsComponent implements OnInit {
-
   public job$: Observable<IJob | undefined> = this.activatedRoute.params.pipe(
     switchMap((params) => {
       return this.jobService.getJobsById(params['id']);
     })
   );
-
 
   jobLength?: number | boolean | undefined = this.jobService.jobsLength;
 
@@ -27,9 +25,7 @@ export class JobDetailsComponent implements OnInit {
     private jobService: JobService
   ) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   nextJob(id: number) {
     // @ts-ignore
@@ -40,5 +36,10 @@ export class JobDetailsComponent implements OnInit {
 
   lastJob(id: number) {
     return this.router.navigate(['/jobs/job-details/' + (id - 1)]);
+  }
+
+  apply(id: number, isApplied: boolean) {
+    this.jobService.applyToJob(id, isApplied).subscribe();
+    this.router.navigate(['/jobs']);
   }
 }

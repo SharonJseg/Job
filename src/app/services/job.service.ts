@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IJob } from '../jobs/interface/job.interface';
 import { JOBS } from '../jobs/interface/job.mock';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, tap } from 'rxjs';
+import { map, Observable, switchMap, tap } from 'rxjs';
 
 const BASE_URL = `http://localhost:3001`;
 
@@ -35,7 +35,6 @@ export class JobService {
   }
 
   addJob(formData: {}, requirements: string, role: string): Observable<IJob[]> {
-    console.log(formData);
     const updatedFormData = {
       ...formData,
       logo: './assets/images/job-logo-white-md.svg',
@@ -48,7 +47,6 @@ export class JobService {
         content: role,
       },
     };
-    console.log('updated', updatedFormData);
     return this.httpClient.post<IJob[]>(`${BASE_URL}/jobs`, updatedFormData);
     // .pipe(tap((res) => console.log(res)));
   }
@@ -59,5 +57,11 @@ export class JobService {
         // console.log(job);
       })
     );
+  }
+
+  applyToJob(id: number, isApplied: boolean): Observable<IJob> {
+    return this.httpClient.patch<IJob>(`${BASE_URL}/jobs/${id}`, {
+      isApplied: !isApplied,
+    });
   }
 }

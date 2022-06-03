@@ -10,6 +10,7 @@ export interface Role {
 
 export interface IJob {
   id: number;
+  isApplied?: boolean;
   company: string;
   logo: string;
   logoBackground: string;
@@ -21,5 +22,4 @@ export interface IJob {
   description: string;
   requirements: Requirements;
   role: Role;
-  isApplied?: false;
 }

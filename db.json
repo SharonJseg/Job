@@ -12,6 +12,7 @@
   "jobs": [
     {
       "id": 1,
+      "isApplied": false,
       "company": "Scoot",
       "logo": "./assets/images/logos/scoot.svg",
       "logoBackground": "hsl(36, 87%, 49%)",
@@ -522,7 +523,8 @@
       "logo": "./assets/images/job-logo-white-md.svg",
       "logoBackground": "hsl(1, 57%, 70%)",
       "postedAt": "1sec ago",
-      "id": 17
+      "id": 17,
+      "isApplied": false
     }
   ]
 }

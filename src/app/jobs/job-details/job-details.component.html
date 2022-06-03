@@ -28,7 +28,7 @@
           <p class="job__location">{{ job.location }}</p>
           <p class="job__text">{{ job.description }}</p>
         </div>
-        <button class="job__button job__apply-button">Apply</button>
+        <button class="job__button job__apply-button" (click)="apply(job.id, job.isApplied!)">Apply</button>
       </div>
 
        <job-details-box
