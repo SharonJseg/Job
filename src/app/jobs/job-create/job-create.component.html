@@ -2,54 +2,81 @@
   <section class="form__container">
     <h2 class="form__title">Please fill out the form</h2>
     <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <div class="form__flow">
+      <div class="form__group">
+        <label class="label">Company Name</label>
+        <job-input
+          [type]="'text'"
+          [placeholder]="'Enter Company Name'"
+          [inputName]="'company'"
+          [formControlName]="'company'"
+          [validators]="inputValidators"
+        ></job-input>
+      </div>
+      <div class="form__group">
+        <label class="label">Position</label>
+        <job-input
+          [type]="'text'"
+          [placeholder]="'Enter Position Name'"
+          [inputName]="'position'"
+          [formControlName]="'position'"
+          [validators]="inputValidators"
+        >
+        </job-input>
+      </div>
+      </div>
+      <div class="form__flow">
+
+      <div class="form__group">
+        <label class="label">Website</label>
+        <job-input
+          [type]="'text'"
+          [placeholder]="'Enter Company Web Address'"
+          [inputName]="'website'"
+          [formControlName]="'website'"
+          [validators]="inputValidators"
+        ></job-input>
+      </div>
+      <div class="form__group">
+      <label class="label">Location</label>
       <job-input
-        [type]="'text'"
-        [placeholder]="'Enter Company Name'"
-        [inputName]="'company'"
-        [formControlName]="'company'"
-        [validators]="inputValidators"
-      ></job-input>
-      <job-input
-        [type]="'text'"
-        [placeholder]="'Enter Position Name'"
-        [inputName]="'position'"
-        [formControlName]="'position'"
-        [validators]="inputValidators"
-      ></job-input
-      ><job-input
-        [type]="'text'"
-        [placeholder]="'Enter Company Web Address'"
-        [inputName]="'website'"
-        [formControlName]="'website'"
-        [validators]="inputValidators"
-      ></job-input
-      ><job-input
         [type]="'text'"
         [placeholder]="'Enter location'"
         [inputName]="'location'"
         [formControlName]="'location'"
         [validators]="inputValidators"
-      ></job-input
-      ><job-input
-        [type]="'text'"
-        [placeholder]="'Enter website'"
-        [inputName]="'website'"
-        [formControlName]="'website'"
-        [validators]="inputValidators"
-      ></job-input
-      >
-      <textarea placeholder="Description" [formControlName]="'description'"
+      ></job-input>
+      </div>
+      </div>
+
+      <div class="form__flow">
+
+      <div class="form__group">
+
+      <label class="label">Job Description</label>
+      <textarea
+        placeholder="Description"
+        [formControlName]="'description'"
       ></textarea>
-      <textarea placeholder="Requirements" [formControlName]="'requirements'"
+      </div>
+      <div class="form__group">
+      <label class="label">Job Requirements</label>
+      <textarea
+        placeholder="Requirements"
+        [formControlName]="'requirements'"
       ></textarea>
-      <textarea placeholder="Role" [formControlName]="'role'"
-      ></textarea>
+      </div>
+      </div>
+      <div class="form__group">
+      <label class="label">Job Role</label>
+      <textarea placeholder="Role" [formControlName]="'role'"></textarea>
+      </div>
       <button
         class="form__button"
         [disabled]="formGroup.invalid"
         [ngClass]="formGroup.invalid ? 'form__button-disabled' : ''"
       >
-        LOGIN
+        SUBMIT
       </button>
     </form>
   </section>

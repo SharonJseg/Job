@@ -1,5 +1,5 @@
 <div class="actions">
-  <a [routerLink]="'/jobs'" *ngIf="router.url !== '/jobs'" class="back"
+  <a [routerLink]="'/jobs'" *ngIf="router !== '/jobs'" class="back"
     >< back to all jobs</a
   >
   <p class="username">{{ userName }}</p>

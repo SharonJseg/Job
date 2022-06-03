@@ -27,26 +27,24 @@ export class JobService {
   }
 
   generateHSLColor() {
-    const hue = Math.floor((Math.random() * 24) * 15)
-    const sat = Math.floor(Math.random() * 101)
-    const lig = Math.floor(Math.random() * 101)
+    const hue = Math.floor(Math.random() * 24 * 15);
+    const sat = Math.floor(Math.random() * 101);
+    const lig = Math.floor(Math.random() * 101);
 
-    return `hsl(${hue}, ${sat}%, ${lig}%)`
+    return `hsl(${hue}, ${sat}%, ${lig}%)`;
   }
 
   addJob(formData: {}, requirements: string, role: string): Observable<IJob[]> {
     console.log(formData);
     const updatedFormData = {
       ...formData,
-      logo: './assets/images/logos/blogr.svg',
+      logo: './assets/images/job-logo-white-md.svg',
       logoBackground: this.generateHSLColor(),
       postedAt: '1sec ago',
       requirements: {
-        title: 'Requirements',
         content: requirements,
       },
       role: {
-        title: 'Requirements',
         content: role,
       },
     };

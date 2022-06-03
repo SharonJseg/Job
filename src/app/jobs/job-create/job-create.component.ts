@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JobService } from '../../services/job.service';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-create',
@@ -16,7 +16,7 @@ export class JobCreateComponent implements OnInit {
     position: [undefined, this.inputValidators],
     location: [undefined, this.inputValidators],
     website: [undefined, this.inputValidators],
-    description: [undefined],
+    description: [undefined, this.inputValidators],
     requirements: [undefined],
     role: [undefined],
   });
@@ -30,13 +30,13 @@ export class JobCreateComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    this.jobService.addJob(
-      this.formGroup.value,
-      this.formGroup.value.requirements,
-      this.formGroup.value.role
-    )
-    .subscribe();
-    this.router.navigate(['/jobs'])
-
+    this.jobService
+      .addJob(
+        this.formGroup.value,
+        this.formGroup.value.requirements,
+        this.formGroup.value.role
+      )
+      .subscribe();
+    this.router.navigate(['/jobs']);
   }
 }

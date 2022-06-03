@@ -3,6 +3,7 @@
     <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__logo" />
   </div>
   <div class="job__details-container">
+    <p *ngIf="job.isApplied">applied</p>
     <p class="job__postedAt">{{ job.postedAt }}</p>
     <h2 class="job__position">{{ job.position }}</h2>
     <p class="job__company">{{ job.company }}</p>

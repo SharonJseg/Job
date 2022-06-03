@@ -1,6 +1,7 @@
 :host {
-  margin-bottom: 15px;
-  height: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
 }
 
 .job__input {
@@ -18,13 +19,22 @@
   }
 
   &-error {
-    display: none;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
     color: #E42C51;
     font-size: 12px;
     padding-left: 15px;
+    transform: translateY(-5px);
+    transition: 0.2s all ease;
+
 
     &-show {
-      display: block;
+      visibility: visible;
+      transform: translateY(0px);
+      opacity: 1;
     }
   }
+
+
 }

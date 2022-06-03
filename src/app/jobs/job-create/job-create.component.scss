@@ -1,5 +1,86 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+
+  &__title {
+    font-family: "Montagu Slab", serif;
+    font-size: 30px;
+    color: #535353;
+    letter-spacing: -0.4px;
+    margin: 25px 0 30px;
+  }
+
+  &__container {
+    background: #fff;
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    padding: 0 32px 32px 32px;
+    //max-width: 600px;
+  }
+
+  &__flow {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    //max-width: 80%;
+    width: 50%;
+  }
+
+  &__button {
+    height: 44px;
+    outline: none;
+    background: #ff962b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 150px;
+    align-self: center;
+
+    &:hover {
+      background: rgb(254, 165, 74);
+    }
+
+    &-disabled {
+      background: #f3b272;
+      cursor: default;
+
+      &:hover {
+        background: #f3b272;
+      }
+    }
+  }
+}
+
+.label {
+  display: block;
+  color: #535353;
+  font-family: "Montagu Slab", serif;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+textarea {
+  width: 100%;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 100;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 1px solid #d2d2d2;
+  line-height: 2;
+  margin-bottom: 15px;
+  height: 100px;
+  resize: none;
+
+  &:focus {
+    outline: 1px solid black;
+  }
 }

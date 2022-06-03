@@ -12,8 +12,7 @@
   </span>
   <span
     class="job__input-error"
-    *ngIf="formControl.hasError('required')"
-    [ngClass]="
+      [ngClass]="
       formControl.touched && formControl.invalid
         ? 'job__input-error-show'
         : ''

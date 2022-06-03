@@ -1,9 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { JobService } from '../services/job.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { BehaviorSubject, ReplaySubject, tap } from 'rxjs';
-import { User } from '../jobs/interface/user.inteface';
 
 @Component({
   selector: 'app-topbar',
@@ -12,22 +9,16 @@ import { User } from '../jobs/interface/user.inteface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopbarComponent implements OnInit {
-  // userName: string | null = '';
   userName: string | null = localStorage.getItem('username');
+  router = this._router.url;
 
-  user$: ReplaySubject<User | null> = new ReplaySubject<User | null>();
+  constructor(private _router: Router, private authService: AuthService) {}
 
-  constructor(
-    public router: Router,
-    private authService: AuthService
-  ) {}
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onLogout() {
-    this.authService.logOut()
-    this.router.navigate(['/login']).then((res) => {
+    this.authService.logOut();
+    this._router.navigate(['/login']).then((res) => {
       localStorage.clear();
     });
   }

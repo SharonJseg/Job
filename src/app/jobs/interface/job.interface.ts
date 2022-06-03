@@ -21,4 +21,5 @@ export interface IJob {
   description: string;
   requirements: Requirements;
   role: Role;
+  isApplied?: false;
 }
