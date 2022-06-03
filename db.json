@@ -12,7 +12,7 @@
   "jobs": [
     {
       "id": 1,
-      "isApplied": false,
+      "isApplied": true,
       "company": "Scoot",
       "logo": "./assets/images/logos/scoot.svg",
       "logoBackground": "hsl(36, 87%, 49%)",

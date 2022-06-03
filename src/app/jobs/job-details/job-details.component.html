@@ -7,6 +7,7 @@
           [ngStyle]="{ 'background-color': job.logoBackground }"
         >
           <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__img" />
+          <p *ngIf="job.isApplied">applied</p>
         </div>
         <div class="job__company-container">
           <h2 class="job__company">{{ job.company }}</h2>
