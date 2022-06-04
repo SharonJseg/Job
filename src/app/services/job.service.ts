@@ -30,8 +30,11 @@ export class JobService {
     const hue = Math.floor(Math.random() * 24 * 15);
     const sat = Math.floor(Math.random() * 101);
     const lig = Math.floor(Math.random() * 101);
-
     return `hsl(${hue}, ${sat}%, ${lig}%)`;
+  }
+
+  generateRandomContract() {
+    return Math.floor(Math.random() * 2) === 1 ? 'Full Time' : 'Part Time';
   }
 
   addJob(formData: {}, requirements: string, role: string): Observable<IJob[]> {
@@ -40,6 +43,7 @@ export class JobService {
       logo: './assets/images/job-logo-white-md.svg',
       logoBackground: this.generateHSLColor(),
       postedAt: '1sec ago',
+      contract: this.generateRandomContract(),
       requirements: {
         content: requirements,
       },

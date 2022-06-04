@@ -1,12 +1,34 @@
-<li class="job" *ngIf="job" [routerLink]="['job-details', job.id]" >
-  <div class="job__logo-container" [ngStyle]="{'background-color': job.logoBackground}" >
+<li class="job" *ngIf="job" [routerLink]="['job-details', job.id]">
+  <job-application-notation *ngIf="job.isApplied"></job-application-notation>
+  <div
+    class="job__logo-container"
+    [ngStyle]="{ 'background-color': job.logoBackground }"
+  >
     <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__logo" />
   </div>
   <div class="job__details-container">
-    <p *ngIf="job.isApplied">applied</p>
     <p class="job__postedAt">{{ job.postedAt }}</p>
     <h2 class="job__position">{{ job.position }}</h2>
     <p class="job__company">{{ job.company }}</p>
-    <p class="job__location">{{ job.location }}</p>
+    <div class="container">
+      <p class="job__location">{{ job.location }}</p>
+      <div class="job__contract-container">
+        <img *ngIf="job.contract === 'Full Time'; else partTime"
+          src="./assets/images/fulltime.svg"
+          alt="full time"
+          class="job__contract-image"
+        />
+        <ng-template #partTime>
+        <img
+          src="./assets/images/parttime.svg"
+          alt="full time"
+          class="job__contract-image"
+        />
+        </ng-template>
+        <p class="job__contract">
+          {{ job.contract }}
+        </p>
+      </div>
+    </div>
   </div>
 </li>

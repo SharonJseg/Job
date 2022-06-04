@@ -17,6 +17,7 @@ export interface IJob {
   position: string;
   postedAt: string;
   location: string;
+  contract?: string;
   website: string;
   apply: string;
   description: string;

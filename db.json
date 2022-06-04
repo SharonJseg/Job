@@ -12,7 +12,7 @@
   "jobs": [
     {
       "id": 1,
-      "isApplied": true,
+      "isApplied": false,
       "company": "Scoot",
       "logo": "./assets/images/logos/scoot.svg",
       "logoBackground": "hsl(36, 87%, 49%)",
@@ -44,6 +44,7 @@
     },
     {
       "id": 2,
+      "isApplied": false,
       "company": "Blogr",
       "logo": "./assets/images/logos/blogr.svg",
       "logoBackground": "hsl(12, 79%, 52%)",
@@ -75,6 +76,7 @@
     },
     {
       "id": 3,
+      "isApplied": false,
       "company": "Vector",
       "logo": "./assets/images/logos/vector.svg",
       "logoBackground": "hsl(235, 10%, 23%)",
@@ -105,6 +107,7 @@
     },
     {
       "id": 4,
+      "isApplied": false,
       "company": "Office Lite",
       "logo": "./assets/images/logos/officelite.svg",
       "logoBackground": "hsl(227, 62%, 48%)",
@@ -137,6 +140,7 @@
     },
     {
       "id": 5,
+      "isApplied": false,
       "company": "Pod",
       "logo": "./assets/images/logos/pod.svg",
       "logoBackground": "hsl(216, 46%, 14%)",
@@ -173,6 +177,7 @@
     },
     {
       "id": 6,
+      "isApplied": false,
       "company": "Creative",
       "logo": "./assets/images/logos/creative.svg",
       "logoBackground": "hsl(295, 55%, 21%)",
@@ -207,6 +212,7 @@
     },
     {
       "id": 7,
+      "isApplied": false,
       "company": "Pomodoro",
       "logo": "./assets/images/logos/pomodoro.svg",
       "logoBackground": "hsl(254, 71%, 45%)",
@@ -238,6 +244,7 @@
     },
     {
       "id": 8,
+      "isApplied": false,
       "company": "Maker",
       "logo": "./assets/images/logos/maker.svg",
       "logoBackground": "hsl(218, 58%, 31%)",
@@ -269,6 +276,7 @@
     },
     {
       "id": 9,
+      "isApplied": false,
       "company": "Coffeeroasters",
       "logo": "./assets/images/logos/coffeeroasters.svg",
       "logoBackground": "hsl(29, 60%, 87%)",
@@ -300,6 +308,7 @@
     },
     {
       "id": 10,
+      "isApplied": false,
       "company": "Mastercraft",
       "logo": "./assets/images/logos/mastercraft.svg",
       "logoBackground": "hsl(0, 0%, 12%)",
@@ -333,6 +342,7 @@
     },
     {
       "id": 11,
+      "isApplied": false,
       "company": "Crowdfund",
       "logo": "./assets/images/logos/crowdfund.svg",
       "logoBackground": "hsl(157, 57%, 50%)",
@@ -366,6 +376,7 @@
     },
     {
       "id": 12,
+      "isApplied": false,
       "company": "Typemaster",
       "logo": "./assets/images/logos/typemaster.svg",
       "logoBackground": "hsl(22, 89%, 52%)",
@@ -398,6 +409,7 @@
     },
     {
       "id": 13,
+      "isApplied": false,
       "company": "Crowdfund",
       "logo": "./assets/images/logos/crowdfund.svg",
       "logoBackground": "hsl(157, 57%, 50%)",
@@ -430,6 +442,7 @@
     },
     {
       "id": 14,
+      "isApplied": false,
       "company": "Coffeeroasters",
       "logo": "./assets/images/logos/coffeeroasters.svg",
       "logoBackground": "hsl(29, 60%, 87%)",
@@ -462,6 +475,7 @@
     },
     {
       "id": 15,
+      "isApplied": false,
       "company": "Blogr",
       "logo": "./assets/images/logos/blogr.svg",
       "logoBackground": "hsl(12, 79%, 52%)",
@@ -490,41 +504,6 @@
           "Proactively solve the problems most important to the business"
         ]
       }
-    },
-    {
-      "company": "asddsdas",
-      "position": "kljhlkh",
-      "location": "kljhklhjlk",
-      "website": "hlkjhlkh",
-      "description": "lkhlkjhlk",
-      "requirements": {
-        "content": "hlkjhkhlkjh"
-      },
-      "role": {
-        "content": "lkjhlkhjlkh"
-      },
-      "logo": "./assets/images/job-logo-white-md.svg",
-      "logoBackground": "hsl(128, 57%, 30%)",
-      "postedAt": "1sec ago",
-      "id": 16
-    },
-    {
-      "company": "asdasa",
-      "position": "asdads",
-      "location": "saddasdadsad",
-      "website": "sadadsad",
-      "description": "asdasdsad",
-      "requirements": {
-        "content": "asdasda"
-      },
-      "role": {
-        "content": "sadadsadasd"
-      },
-      "logo": "./assets/images/job-logo-white-md.svg",
-      "logoBackground": "hsl(1, 57%, 70%)",
-      "postedAt": "1sec ago",
-      "id": 17,
-      "isApplied": false
     }
   ]
 }

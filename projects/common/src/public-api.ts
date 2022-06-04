@@ -15,5 +15,8 @@ export * from './lib/loader/loader.module';
 export * from './lib/details-box/details-box.component';
 export * from './lib/details-box/details-box.module';
 
-export * from './lib/side-button/side-button.component'
-export * from './lib/side-button/side-button.module'
+export * from './lib/side-button/side-button.component';
+export * from './lib/side-button/side-button.module';
+
+export * from './lib/application-notation/application-notation.component';
+export * from './lib/application-notation/application-notation.module';

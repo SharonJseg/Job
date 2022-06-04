@@ -7,7 +7,9 @@
           [ngStyle]="{ 'background-color': job.logoBackground }"
         >
           <img src="{{ job.logo }}" alt="{{ job.company }}" class="job__img" />
-          <p *ngIf="job.isApplied">applied</p>
+          <job-application-notation
+            *ngIf="job.isApplied"
+          ></job-application-notation>
         </div>
         <div class="job__company-container">
           <h2 class="job__company">{{ job.company }}</h2>
@@ -17,8 +19,15 @@
         </div>
         <!--        <button class="job__button job__website-button">Company Site</button>-->
         <div class="button-container">
-        <button *ngIf="job.id > 1"  (click)="lastJob(job.id)" class="round-button round-button__back"></button>
-        <button (click)="nextJob(job.id)" class="round-button round-button__next"></button>
+          <button
+            *ngIf="job.id > 1"
+            (click)="lastJob(job.id)"
+            class="round-button round-button__back"
+          ></button>
+          <button
+            (click)="nextJob(job.id)"
+            class="round-button round-button__next"
+          ></button>
         </div>
       </header>
 
@@ -26,24 +35,60 @@
         <div class="job__position">
           <p class="job__postedAt">{{ job.postedAt }}</p>
           <h2 class="job__position-title">{{ job.position }}</h2>
-          <p class="job__location">{{ job.location }}</p>
+          <div class="job__location-container">
+            <p class="job__location">{{ job.location }}</p>
+
+
+              <div class="job__contract-container">
+                <img *ngIf="job.contract === 'Full Time'; else partTime"
+                     src="./assets/images/fulltime.svg"
+                     alt="full time"
+                     class="job__contract-image"
+                />
+                <ng-template #partTime>
+                  <img
+                    src="./assets/images/parttime.svg"
+                    alt="full time"
+                    class="job__contract-image"
+                  />
+                </ng-template>
+                <p class="job__contract">
+                  {{ job.contract }}
+                </p>
+              </div>
+
+          </div>
           <p class="job__text">{{ job.description }}</p>
         </div>
-        <button class="job__button job__apply-button" (click)="apply(job.id, job.isApplied!)">Apply</button>
+
+        <button
+          *ngIf="job.isApplied; else couldApply"
+          class="job__button job__apply-button"
+          (click)="apply(job.id, job.isApplied!)"
+        >
+          Cancel
+        </button>
+        <ng-template #couldApply>
+          <button
+            class="job__button job__apply-button"
+            (click)="apply(job.id, job.isApplied!)"
+          >
+            Apply
+          </button>
+        </ng-template>
       </div>
 
-       <job-details-box
-      [title]="'Requirements'"
-      [content]="job.requirements.content"
-      [items]="job.requirements.items"
+      <job-details-box
+        [title]="'Requirements'"
+        [content]="job.requirements.content"
+        [items]="job.requirements.items"
       ></job-details-box>
 
       <job-details-box
-      [title]="'Role'"
-      [content]="job.role.content"
-      [items]="job.role.items"
+        [title]="'Role'"
+        [content]="job.role.content"
+        [items]="job.role.items"
       ></job-details-box>
-
     </section>
   </ng-container>
 </app-layout>
