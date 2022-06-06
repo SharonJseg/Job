@@ -55,6 +55,10 @@ export class JobService {
     // .pipe(tap((res) => console.log(res)));
   }
 
+  deleteJob(id: number): Observable<any> {
+    return this.httpClient.delete(`${BASE_URL}/jobs/${id}`)
+  }
+
   getJobsById(id: number): Observable<IJob> {
     return this.httpClient.get<IJob>(`${BASE_URL}/jobs/${id}`).pipe(
       tap((job) => {

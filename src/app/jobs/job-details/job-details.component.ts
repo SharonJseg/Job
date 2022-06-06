@@ -42,4 +42,9 @@ export class JobDetailsComponent implements OnInit {
     this.jobService.applyToJob(id, isApplied).subscribe();
     this.router.navigate(['/jobs']);
   }
+
+  deleteJob(id: number) {
+    this.jobService.deleteJob(id).subscribe()
+    this.router.navigate(['/jobs'])
+  }
 }

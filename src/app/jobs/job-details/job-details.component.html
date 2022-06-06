@@ -16,6 +16,7 @@
           <a href="{{ job.website }}" target="_blank" class="job__website"
             >{{ job.company }}.com</a
           >
+          <button *ngIf="job.id > 15" (click)="deleteJob(job.id)" class="job__delete-btn">Delete Position</button>
         </div>
         <!--        <button class="job__button job__website-button">Company Site</button>-->
         <div class="button-container">
